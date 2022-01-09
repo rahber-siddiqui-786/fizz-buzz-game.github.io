@@ -1,0 +1,123 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizz Buzz</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: lightgreen;
+        }
+
+     
+
+        .container {
+            width: 30rem;
+            box-shadow: 0 0 10px black;
+            padding: 5rem;
+            padding-top: 3rem;
+            margin: 6rem auto;
+            display: flex;
+            /* justify-content: center; */
+            flex-direction: column;
+            background-color: lightgrey;
+
+        }
+
+         input {
+            height: 2.5rem;
+            width: 20rem;
+            border-radius: 5px;
+            border: none;
+            padding: 1rem;
+        }
+    
+        button {
+            height: 2.5rem;
+            width: 8rem;
+            border-radius: 10px;
+            border: none;
+            text-transform: uppercase;
+            color: white;
+            background-color: blue;
+            letter-spacing: 2px;
+
+        }
+
+        p {
+            height: 27px;
+            width: 500px;
+            text-decoration: solid;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: darkblue;
+            font-size: 25px;
+
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            font-family: sans-serif;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-family: sans-serif;
+            font-weight: 100;
+            letter-spacing: 3px;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>FizzBuzz GAME</h1>
+        <div class="content">
+            <input type="number" id="input" placeholder="Enter number">
+            <button class="btn" onclick="fn()">Play</button>
+        </div>
+        <ul id="ul"></ul>
+    </div>
+
+    <script>
+        function fn() {
+            var inputRef = document.getElementById('input').value;
+            fizzBuzz(inputRef);
+        }
+
+        function fizzBuzz(number) {
+   
+            let ul = document.getElementById('ul');
+
+            for (let i = 1; i <= number; i++) {
+                if (i % 15 === 0) {
+                    let li = document.createElement('li');
+                    li.innerText = 'FizzBuzz';
+                    ul.appendChild(li);
+                }
+                else if (i % 3 === 0) {
+
+                    let li = document.createElement('li');
+                    li.innerText = 'Fizz';
+                    ul.appendChild(li);
+                }
+                else if (i % 5 === 0) {
+                    let li = document.createElement('li');
+                    li.innerText = 'Buzz';
+                    ul.appendChild(li);
+                }
+                else {
+                    let li = document.createElement('li');
+                    li.innerText = i ;
+                    ul.appendChild(li);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
